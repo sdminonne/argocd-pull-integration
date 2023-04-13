@@ -23,18 +23,6 @@ spec:
         command:
         - /manager
         image: {{ .Values.registry }}/{{ .Values.image }}:{{ .Values.tag }}
-        livenessProbe:
-          exec:
-            command:
-            - ls
-          initialDelaySeconds: 15
-          periodSeconds: 15
-        readinessProbe:
-          exec:
-            command:
-            - ls
-          initialDelaySeconds: 15
-          periodSeconds: 15
         resources:
           limits:
             cpu: 500m
